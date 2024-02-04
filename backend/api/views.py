@@ -109,7 +109,7 @@ class RecipesViewSet(viewsets.ModelViewSet):
             'recipe_ingredients__ingredient',
             'tags',
             'author'
-            ).all()
+        ).all()
         return queryset
 
     def get_serializer_class(self):
