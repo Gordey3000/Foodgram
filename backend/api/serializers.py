@@ -1,9 +1,8 @@
 import base64
 
 from django.core.files.base import ContentFile
-from django.shortcuts import get_object_or_404
 from djoser.serializers import UserCreateSerializer, UserSerializer
-from rest_framework import serializers, validators
+from rest_framework import serializers
 
 from users.models import User, Subscribe
 from recipes.models import (
