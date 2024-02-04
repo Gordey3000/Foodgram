@@ -114,7 +114,6 @@ class RecipesSerializer(serializers.ModelSerializer):
         )
         read_only_fields = ('is_favorited', 'is_in_shopping_cart',)
         model = Recipe
-#
 
     def get_is_in_shopping_cart(self, obj):
         user = self.context.get('request').user
@@ -231,7 +230,7 @@ class SubscribeSerializer(serializers.ModelSerializer):
             'recipes_count',
         )
         model = User
-#
+
     def get_recipes(self, obj):
         request = self.context.get("request")
         recipes_limit = None
@@ -243,7 +242,7 @@ class SubscribeSerializer(serializers.ModelSerializer):
         return RecipeSmallSerializer(
             recipes, many=True, context={"request": request}
         ).data
-# 
+
     def get_is_subscribed(self, obj):
         request = self.context.get('request')
         subscribes = Subscribe.objects.filter(
