@@ -9,10 +9,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 
-DEBUG = os.getenv('DEBUG', False)
+DEBUG = os.getenv('DEBUG', 'false').lower() == 'true'
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'foodgrampam.ddns.net', '158.160.74.14']
-
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split()
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',

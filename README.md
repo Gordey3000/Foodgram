@@ -24,6 +24,7 @@ POSTGRES_USER=postgres
 POSTGRES_PASSWORD=<your_password>
 DB_HOST=foodgram_db
 DB_PORT=5432
+DEBUG=False
 SECRET_KEY=<your_secret_key>
 ALLOWED_HOSTS=localhost you_can_add_your_host_here
 ```
@@ -49,7 +50,7 @@ docker compose exec backend python manage.py migrate
 docker compose exec backend python manage.py collectstatic
 ```
 ```
-docker compose exec backend cp -r /app/collected_static/. /backend_static/static/ 
+docker compose exec backend cp -r //app/collected_static/. //backend_static/static/ 
 ```
 ```
 docker compose exec backend python manage.py load_ingr - загрузить ингредиенты из списка. 
